@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: Build Pipeline
 
 on:
   push:
@@ -37,36 +37,20 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./bookstore
+        working-directory: ./
 
       - name: Build backend
         run: nx run backend:build
-        working-directory: ./bookstore
+        working-directory: ./
 
       - name: Test backend
         run: nx run backend:test
-        working-directory: ./bookstore
+        working-directory: ./
 
       - name: Build frontend
         run: nx run frontend:build
-        working-directory: ./bookstore
+        working-directory: ./
 
       - name: Test frontend
-        run: nx run backend:test
-        working-directory: ./bookstore
-
-  sonarcloud:
-    name: SonarCloud
-    runs-on: ubuntu-latest
-    needs: build # Ensure this job runs after the build job
-
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
-
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: nx run frontend:test
+        working-directory: ./

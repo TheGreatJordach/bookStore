@@ -37,23 +37,23 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./bookstore
+        working-directory: ./
 
       - name: Build backend
         run: nx run backend:build
-        working-directory: ./bookstore
+        working-directory: ./
 
       - name: Test backend
         run: nx run backend:test
-        working-directory: ./bookstore
+        working-directory: ./
 
       - name: Build frontend
         run: nx run frontend:build
-        working-directory: ./bookstore
+        working-directory: ./
 
       - name: Test frontend
         run: nx run frontend:test
-        working-directory: ./bookstore
+        working-directory: ./
 
   sonarcloud:
     name: SonarCloud
