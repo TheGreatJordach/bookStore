@@ -40,19 +40,19 @@ jobs:
         working-directory: ./bookstore
 
       - name: Build backend
-        run: npm run build backend
+        run: nx run backend:build
         working-directory: ./bookstore
 
       - name: Test backend
-        run: npm run test backend
+        run: nx run backend:test
         working-directory: ./bookstore
 
       - name: Build frontend
-        run: npm run build frontend
+        run: nx run frontend:build
         working-directory: ./bookstore
 
       - name: Test frontend
-        run: npm run test frontend
+        run: nx run backend:test
         working-directory: ./bookstore
 
   sonarcloud:
