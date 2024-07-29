@@ -32,8 +32,14 @@ jobs:
         run: npx husky install
         working-directory: ./
 
-      - run: npx nx run-many --target=build --all --parallel
+      - run: npx nx run backend:build
         working-directory: ./
 
-      - run: npx nx run-many --target=test --all --parallel
+      - run: npx nx run backend:test
+        working-directory: ./
+
+      - run: npx nx run frontend:build
+        working-directory: ./
+
+      - run: npx nx run frontend:test
         working-directory: ./
