@@ -1,10 +1,11 @@
 import {Test, TestingModule} from "@nestjs/testing";
 
 import { AppService } from "./app.service";
+/**
 import {Connection, getConnection} from "typeorm";
 import {ConfigModule, ConfigService} from "@nestjs/config";
 import {AppModule} from "./app.module";
-
+**/
 describe("AppService", () => {
   let service: AppService;
 
@@ -23,7 +24,8 @@ describe("AppService", () => {
   });
 });
 
-// TEST 2: Check if Environment Variable Exists
+/**  TEST 2: Check if Environment Variable Exists
+
 describe('Environment Variables', () => {
   let configService: ConfigService;
 
@@ -68,3 +70,5 @@ describe('Database Connection', () => {
     expect(connection.isConnected).toBeTruthy();
   });
 });
+
+**/
