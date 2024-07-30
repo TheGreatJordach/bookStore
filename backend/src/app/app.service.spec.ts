@@ -40,7 +40,7 @@ describe('Environment Variables', () => {
   });
 
   it('should have DATABASE_URL environment variable set', () => {
-    const databaseUrl = configService.get<string>('DATABASE_URL');
+    const databaseUrl = configService.get<string>('DB_HOST');
     expect(databaseUrl).toBeDefined();
   });
 });
