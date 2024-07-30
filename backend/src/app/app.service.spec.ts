@@ -1,6 +1,9 @@
 import {Test, TestingModule} from "@nestjs/testing";
 
 import { AppService } from "./app.service";
+import * as process from "node:process";
+import {AppModule} from "./app.module";
+import {ConfigModule} from "@nestjs/config";
 /**
 import {Connection, getConnection} from "typeorm";
 import {ConfigModule, ConfigService} from "@nestjs/config";
@@ -23,6 +26,8 @@ describe("AppService", () => {
     });
   });
 });
+
+
 
 /**  TEST 2: Check if Environment Variable Exists
 
